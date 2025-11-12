@@ -33,7 +33,7 @@ f = Fernet(key)
 # --- Routes HTML utiles ---
 @app.route('/')
 def index():
-    return render_template("crypto.html")
+    return render_template("hello.html")
 
 
 # --- API simples via URL ---

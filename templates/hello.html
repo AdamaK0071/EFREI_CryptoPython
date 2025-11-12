@@ -1,3 +1,31 @@
 <!doctype html>
-<title>CryptoPython</title>
-<h1>Bienvue dans votre atelier CryptoPython !</h1>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Chiffrement / Déchiffrement</title>
+</head>
+<body>
+  <h1>Chiffrement & Déchiffrement (Fernet)</h1>
+
+  <section>
+    <h3>Encrypter</h3>
+    <form action="/encrypt_result" method="get">
+      <input type="text" name="texte" placeholder="Texte à encrypter" required style="width:60%">
+      <button type="submit">Encrypter</button>
+    </form>
+  </section>
+
+  <section style="margin-top:20px;">
+    <h3>Décrypter</h3>
+    <form action="/decrypt_result" method="get">
+      <input type="text" name="texte" placeholder="Token à décrypter" required style="width:80%">
+      <button type="submit">Décrypter</button>
+    </form>
+  </section>
+
+  <p style="margin-top:30px; color:gray;">
+    Astuce : Tu peux aussi appeler directement les routes :
+    <br><code>/encrypt/monTexte</code> et <code>/decrypt/&lt;token&gt;</code> (utilise URL-encoding ou la route /decrypt_result pour coller le token).
+  </p>
+</body>
+</html>

@@ -4,12 +4,15 @@ from flask import render_template
 from flask import json
 from urllib.request import urlopen
 import sqlite3
+import urllib.parse
 import os
 
 app = Flask(__name__)
 
 # --- Gestion de la clé (persistante) ---
-KEYFILE = "fernet.key"
+key = b'1Qx9rWBGGnmEvRB6cMjX9IK0Vv4zbi2oOHZBQdPV1qY='
+fernet = Fernet(key)
+
 
 def load_or_create_key():
     # Priorité : variable d'environnement FER_KEY, sinon fichier, sinon création et sauvegarde dans fichier
